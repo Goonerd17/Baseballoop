@@ -1,11 +1,12 @@
-public class BaseballGameLogic implements GameLogic {
+public class BaseballGameLogic1 implements GameLogic {
     //RandomNumberLength와 마찬가지
-    private static int[] result = new int[2];
-    private static int strike = 0;
-    private static int ball = 0;
+    private int[] result = new int[2];
+    private int strike = 0;
+    private int ball = 0;
 
-    private final GameNumber gameNumber;
-    public BaseballGameLogic(GameNumber gameNumber) {
+    private GameNumber gameNumber;
+
+    public BaseballGameLogic1(GameNumber gameNumber) {
         this.gameNumber = gameNumber;
     }
 
@@ -33,13 +34,9 @@ public class BaseballGameLogic implements GameLogic {
 
         String resultStr = null;
 
-        if (result[0] == 0 && result[1] > 0 ){
-            resultStr = result[1] + "B";
-        } else if (result[0] > 0 && result[1] == 0){
-            resultStr = result[0] + "S";
-        } else {
-            resultStr = result[1] + "B"+result[0] + "S";
-        }
-        return resultStr;
+        if (result[0] == 0 && result[1] > 0 ){ return resultStr = result[1] + "B"; }
+        if (result[0] > 0 && result[1] == 0){ return resultStr = result[0] + "S"; }
+
+        return resultStr = result[1] + "B"+result[0] + "S";
     }
 }
